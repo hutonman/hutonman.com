@@ -1,0 +1,519 @@
+@import "mixin";
+
+$cBlack: black;
+$cWhite: white;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $cBlack;
+  color: $cWhite;
+  font-family: 'RocknRoll One', sans-serif;
+}
+h1, h2, h3, h4, p, figure{
+  margin: 0;
+  padding: 0;
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(149, 108, 40);
+  transition: all .4s;
+}
+
+
+header {
+  display: flex;
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+  background: rgb(148, 148, 148);
+  width: 100%;
+
+  button {
+    display: none;
+  }
+
+  
+  #logo {
+
+    h1 {
+      font-size: 1.8vw;
+      padding: 0 1vw;
+    }
+  }
+  
+  nav {
+    font-size: 1.8vw;
+    width: 100%;
+    margin-left: 10vw;
+
+    ul {
+      display: flex;
+    
+      li {
+
+        a {
+          color: #000;
+          padding: 0 1vw;
+          transition: all 0.4s;
+          opacity: 0.25;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        &:hover {
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.divline {
+  display: flex;
+}
+
+.card {
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0;
+  text-align: center;
+  line-height: 8vw;
+  font-size: calc(8vw / 2);
+  pointer-events: none;
+  font-family: 'Rampart One', cursive;
+  color: #000;
+}
+
+.rotate {
+  transform: rotate3d(3, -2, 0, 360deg);
+  transition: all 2s;
+}
+
+#container {
+  width: 80%;
+  margin: 0 auto;
+
+  #contents {
+
+    section {
+      margin: 30px 0;
+      padding: 30px 0;
+      border: 2px solid black;
+
+      & .title {
+        font-size: 80px;
+        color: $cWhite;
+        display: inline-block;
+        padding: 0 20px;
+        position: relative;
+        font-family: 'Rampart One', cursive;
+        opacity: 0;
+        
+        a {
+          font-size: 24px;
+        }
+        
+        &::after {
+          content: "";
+          background-color: $cWhite;
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: -1;
+          transition: opacity 1s;
+        }
+
+        &.inview {
+          opacity: 1;
+          @include animation(
+            $name: kf-color-change,
+            $duration: 1s,
+            $timing-function: ease-in-out
+          );
+          &::after {
+            @include animation (
+              $name: kf-cover-slide,
+              $duration: 1s,
+              $timing-function: ease-in-out
+            );
+          }
+        }
+      }
+
+      & .content {
+        margin: 20px 0;
+        font-size: 30px;
+        color: $cWhite;
+        font-family: 'RocknRoll One', sans-serif;
+
+        letter-spacing: 1.4px;
+        opacity: 0;
+        transform: translateY(100px);
+
+        &.inview {
+          @include animation (
+            $name: kf-inview-up,
+            $duration: 1s,
+            $timing-function: ease-in-out
+          )
+        }
+        dl dt {
+          margin-top: 2vw;
+        }
+        & ul li {
+          margin: 10px 20px;
+
+          &.like-list-item {
+            text-align: center;
+          }
+
+          & .col-2 {
+            & .img-container {
+              background-color: $cWhite;
+              width: 60px;
+              height: 60px;
+              border-radius: 30%;
+              padding: 20px;
+              & img {
+                width: 100%;
+                height: 100%;
+                line-height: 60px;
+              }
+            }
+          }
+        }
+
+        & .category ul li {
+          
+          margin: 10px 4px;
+        }
+
+        & a {
+          text-decoration: none;
+          font-weight: bold;
+
+          &:visited {
+            color: rgb(59, 113, 165);
+          }
+        }
+      }
+      
+      &#skills {
+        & ul {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        & ul li {
+          width: 16%;
+          margin: 30px 20px;
+
+          &.skill-list-item {
+            text-align: center;
+          }
+
+          & .col-2 {
+            & .img-container {
+              background-color: $cWhite;
+              width: 60px;
+              height: 60px;
+              border-radius: 30%;
+              padding: 20px;
+              & img {
+                width: 100%;
+                height: 100%;
+                line-height: 60px;
+              }
+            }
+          }
+        }
+      }
+      &#works {
+        .swiper-container {
+          margin: 0 auto;
+          margin-top: 40px;
+          width: 12%;
+          height: 700px;
+
+          img {
+            width: 100%;
+            
+          }
+        }
+      }
+      &#web-service {
+        .content-list {
+          width:20vw;
+          img {
+            width: 100%;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@keyframes kf-cover-slide {
+  0% {
+    opacity: 1;
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    opacity: 1;
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  50.1% {
+    opacity: 1;
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+@keyframes kf-color-change {
+  0% {
+    color: $cBlack;
+  }
+  49.9% {
+    color: $cBlack;
+  }
+  50% {
+    color: $cWhite;
+  }
+  50.1% {
+    color: $cBlack;
+  }
+  100% {
+    color: $cWhite;
+  }
+}
+
+@keyframes kf-inview-up {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@import "responsive";
+
+
+.blog-container {
+  color: white;
+  width: 80%;
+  margin: 120px auto;
+
+  .blog-post {
+    margin: 100px 0;
+
+    a {
+  
+      .blog-title {
+        font-family: 'Rampart One', cursive;
+        font-size: 50px;
+      }
+    }
+    .blog-content {
+      font-size: 40px;
+      color: white;
+    }
+  }
+}
+
+.like-list {
+  li {
+    margin: 0 300px;
+  }
+  display: flex;
+}
+
+.skill-list {
+  li {
+    margin: 0 300px;
+  }
+  display: flex;
+}
+
+.card-cmp__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+}
+
+.card-cmp {
+  box-shadow: 3px 3px rgba(255, 255, 255, 1);
+  border: 6px solid #fff;
+  border-radius: 6px;
+  width: 30%;
+  min-width: 450px;
+  background-color: #fff;
+  margin-right: 30px;
+  margin-bottom: 30px;
+
+  &:hover {
+    filter: brightness(1.6);
+  }
+}
+
+.card__img-wrapper {
+  position: relative;
+  padding-top: 60%;
+  overflow: hidden;
+  border: 6px solid #000;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #000;
+  
+  img {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+}
+
+.card__body {
+  position: relative;
+  padding: 15px;
+  border: 6px solid #000;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: #000;
+  min-height: 300px;
+}
+
+.card__body > *:last-child {
+  margin-bottom: 0;
+}
+
+.card__title {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: 'Rampart One', cursive;
+}
+
+.card__text {
+  font-size: 20px;
+}
+
+.card__date {
+  position: absolute;
+  // margin-top: 10px;
+  font-size: 16px;
+  text-align: right;
+  bottom: 0;
+  right: 0;
+}
+
+.service-wrapper {
+  display: flex;
+
+  .content-list {
+    margin-right: 30px;
+  }
+}
+
+.page__img {
+  position: relative;
+  margin: 60px auto;
+  text-align: center;
+  height: 450px;
+  width: 1100px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.blog {
+  font-size: 24px;
+  h2 {
+    border-left: solid 10px #fff;
+    padding-left: 16px;
+    background-color: rgb(41, 41, 41);
+    width: fit-content;
+    margin: 20px;
+    padding: 8px 16px;
+   font-family: 'Rampart One', cursive;
+  }
+  h3 {
+    border-bottom: solid 4px #fff;
+    margin: 20px;
+    width: fit-content;
+  }
+
+  li {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-left: 20px;
+  }
+}
+.blog__container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+
+.blog__title {
+  font-family: 'Rampart One', cursive;
+  font-size: 60px;
+  border-bottom: solid 2px #fff;
+}
+
+.blog__content {
+  margin: 20px auto;
+}
+
+.archives {
+  width: 80%;
+  margin: 4vw auto;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  margin: 6px 0;
+  font-size: 20px;
+}
+
+.category-list {
+  display: flex;
+}
+.category-list-item {
+  margin-left: 14px;
+  list-style-type: none!important;
+  padding: 0;
+}
