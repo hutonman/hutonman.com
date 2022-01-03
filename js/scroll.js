@@ -1,10 +1,10 @@
-const titles = document.querySelectorAll('.title');
-const contents = document.querySelectorAll('.content');
+const titles = document.querySelectorAll('.section__title');
+const contents = document.querySelectorAll('.section__content');
 
 
 const cb = function(entries, observer) {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
+    if (entry.isIntersecting) {
       entry.target.classList.add('inview');
       observer.unobserve(entry.target);
     } else {

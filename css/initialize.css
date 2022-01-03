@@ -1,0 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: 'RocknRoll One', sans-serif;
+}
+
+h1, h2, h3, h4, p, figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #956c28;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}

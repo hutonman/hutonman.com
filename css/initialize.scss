@@ -1,0 +1,31 @@
+
+$cBlack: black;
+$cWhite: white;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $cBlack;
+  color: $cWhite;
+  font-family: 'RocknRoll One', sans-serif;
+}
+
+h1, h2, h3, h4, p, figure{
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(149, 108, 40);
+  transition: all .4s;
+}

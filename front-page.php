@@ -1,12 +1,12 @@
  <?php get_header(); ?>
 
-  <div id="container">
+  <main class="container">
     <div id="top">
       <div id="wrap">
       </div>
     </div>
 
-    <div id="contents">
+    <div class="contents">
       <section id="blog">
         <?php
           $args = array(
@@ -17,9 +17,9 @@
           );
           $blog_query = new WP_Query($args);
         ?>
-        <h2 class="title">BLOG<a href="<?php echo home_url('archives/blog'); ?>">記事一覧</a></h2>
+        <h2 class="section__title">BLOG<a href="<?php echo home_url('archives/blog'); ?>" class="section__title-sub">記事一覧</a></h2>
         <?php if($blog_query->have_posts()): ?>
-          <div class="card-cmp__wrapper content">
+          <div class="card-cmp__wrapper section__content">
             <?php while($blog_query->have_posts()) : $blog_query->the_post(); ?>
               <a href="<?php the_permalink(); ?>" class="card-cmp">
                 <figure class="card__img-wrapper">
@@ -56,8 +56,8 @@
         <?php endif; ?>
       </section>
       <section id="about">
-        <div class="title">ABOUT</div>
-        <div class="content">
+        <div class="section__title">ABOUT</div>
+        <div class="section__content">
           <dl>
             <dt>名前:</dt>
             <dd>坂本健(Sakamoto Takeshi)</dd>
@@ -90,8 +90,8 @@
         </div>
       </section>
       <section id="skills">
-        <h2 class="title">SKiLLS</h2>
-        <div class="content">
+        <h2 class="section__title">SKiLLS</h2>
+        <div class="section__content">
               <?php
                 $args = array(
                   'posts_per_page' => 10,
@@ -114,8 +114,8 @@
         </div>
       </section>
       <section id="works">
-        <h2 class="title">WORKS</h2>
-        <div class="content">
+        <h2 class="section__title">WORKS</h2>
+        <div class="section__content">
           <h3>模写サイト</h3>
           <div class="swiper-container">
           <!-- Additional required wrapper -->
@@ -132,8 +132,8 @@
         </div>
       </section>
       <section id="web-service">
-        <h2 class="title">WEB SERVICE</h2>
-        <div class="content">
+        <h2 class="section__title">WEB SERVICE</h2>
+        <div class="section__content">
           <div class="service-wrapper">
             <div class="content-list">
               <h3>ゲーム攻略サイト</h3>
@@ -151,8 +151,8 @@
         </div>
       </section>
       <section id="contact">
-        <h2 class="title">CONTACT</h2>
-        <div class="content">
+        <h2 class="section__title">CONTACT</h2>
+        <div class="section__content">
           <div class="form">
             <h2>
                お問い合わせ
@@ -163,7 +163,7 @@
 
       </section>
     </div>
-  </div>
+  </main>
 
 <?php get_footer(); ?>
 </body>

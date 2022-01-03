@@ -15,33 +15,33 @@
   <?php wp_head() ?>
 </head>
 
-<body>
-  <div id="head-container">
-    <header>
-      <button id="btn">
-        <span></span>
-        <span></span>
-        <span></span>
+<body class="body-style">
+  <div class="head-container" id="head-container">
+    <header class="header">
+      <button class="header__btn" id="btn">
+        <span class="btn-line"></span>
+        <span class="btn-line"></span>
+        <span class="btn-line"></span>
       </button>
-      <div id="logo">
+      <div class="header__logo" id="logo">
         <h1><a href="<?php echo site_url('/'); ?>">TiER1</a></h1>
       </div>
-      <nav>
-        <ul id="navi">
-          <li>
-            <a href="<?php echo site_url('/#blog'); ?>">BLOG</a>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-list-item">
+            <a href="<?php echo site_url('/#blog'); ?>" class="header__nav-link">BLOG</a>
           </li>
-          <li>
-            <a href="<?php echo site_url('/#about'); ?>">ABOUT</a>
+          <li class="header__nav-list-item">
+            <a href="<?php echo site_url('/#about'); ?>" class="header__nav-link">ABOUT</a>
           </li>
-          <li>
-            <a href="<?php echo site_url('/#skills'); ?>">SKiLLS</a>
+          <li class="header__nav-list-item">
+            <a href="<?php echo site_url('/#skills'); ?>" class="header__nav-link">SKiLLS</a>
           </li>
-          <li>
-            <a href="<?php echo site_url('/#works'); ?>">WORKS</a>
+          <li class="header__nav-list-item">
+            <a href="<?php echo site_url('/#works'); ?>" class="header__nav-link">WORKS</a>
           </li>
-          <li>
-            <a href="<?php echo site_url('/#contact'); ?>">CONTACT</a>
+          <li class="header__nav-list-item">
+            <a href="<?php echo site_url('/#contact'); ?>" class="header__nav-link">CONTACT</a>
           </li>
         </ul>
       </nav>
