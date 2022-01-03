@@ -224,6 +224,7 @@ header nav ul li:hover a {
   height: 60px;
   border-radius: 30%;
   padding: 20px;
+  margin: 0 auto;
 }
 
 #container #contents section .content ul li .col-2 .img-container img {
@@ -761,3 +762,4 @@ header nav ul li:hover a {
   list-style-type: none !important;
   padding: 0;
 }
+/*# sourceMappingURL=styles.css.map */
