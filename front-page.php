@@ -60,7 +60,7 @@
         <div class="section__content">
           <dl>
             <dt>名前:</dt>
-            <dd>坂本健(Sakamoto Takeshi)</dd>
+            <dd>坂本健<br>(Sakamoto Takeshi)</dd>
             <dt>生年月日:</dt>
             <dd>1996/5/11</dd>
             <dt>Like:</dt>
@@ -104,10 +104,10 @@
               <?php if($skill_query->have_posts()): ?>
                   <ul class="skill-list">
                     <?php while($skill_query->have_posts()) : $skill_query->the_post(); ?>
-                    <li class="skill-list-item"><span class="col-3">
+                    <li class="skill-list-item">
                       <div class="img-container"><?php the_post_thumbnail('thumbnail'); ?></div>
                       <?php the_title(); ?>
-                    </span></li>
+                    </li>
                     <?php endwhile; ?>
                   </ul>
                 <?php endif; ?>
@@ -135,18 +135,26 @@
         <h2 class="section__title">WEB SERVICE</h2>
         <div class="section__content">
           <div class="service-wrapper">
-            <div class="content-list">
-              <h3>ゲーム攻略サイト</h3>
-              <a href="https://hutonmangame.com"><img src="<?php echo get_template_directory_uri(); ?>/img/visage.png" alt="publidiary" width="70%"></a>
-            </div>
-            <div class="content-list">
-              <h3>公開日記</h3>
-              <a href="https://publidiary.com"><img src="<?php echo get_template_directory_uri(); ?>/img/publidiary.png" alt="publidiary" width="70%"></a>
-            </div>
-            <div class="content-list">
-              <h3>切り絵ショップ</h3>
-              <a href="https://hutonman.thebase.in"><img src="<?php echo get_template_directory_uri(); ?>/img/shop.png" alt="publidiary" width="70%"></a>
-            </div>
+            <ul class="service-list">
+              <li class="service-list-item">
+                <div>
+                  <h3>切り絵ショップ</h3>
+                  <a href="https://hutonman.thebase.in"><img src="<?php echo get_template_directory_uri(); ?>/img/shop.png" alt=""></a>
+                </div>
+              </li>
+              <li class="service-list-item">
+                <div>
+                  <h3>ゲーム攻略サイト</h3>
+                  <a href="https://hutonmangame.com"><img src="<?php echo get_template_directory_uri(); ?>/img/visage.png" alt=""></a>
+                </div>
+              </li>
+              <li class="service-list-item">
+                <div>
+                  <h3>公開日記</h3>
+                  <a href="https://publidiary.com"><img src="<?php echo get_template_directory_uri(); ?>/img/publidiary.png" alt="publidiary"></a>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
