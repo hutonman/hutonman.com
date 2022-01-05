@@ -10,7 +10,7 @@
       <section id="blog">
         <?php
           $args = array(
-            'posts_per_page' => 9,
+            'posts_per_page' => 6,
             'post_type' => 'blog',
             'orderby' => 'date',
             'order' => 'DESC',
@@ -22,9 +22,10 @@
           <div class="card-cmp__wrapper section__content">
             <?php while($blog_query->have_posts()) : $blog_query->the_post(); ?>
               <a href="<?php the_permalink(); ?>" class="card-cmp">
-                <figure class="card__img-wrapper">
-                  <?php the_post_thumbnail('medium'); ?>
-                </figure>
+                <div class="card__img-wrapper">
+                  <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+                  <!-- <?php the_post_thumbnail('medium'); ?> -->
+                </div>
                 <div class="card__body">
                   <h3 class="card__title"><?php the_title(); ?></h3>
                   <div class="card__text">
@@ -77,11 +78,12 @@
               <?php if($like_query->have_posts()): ?>
                   <ul class="like-list">
                     <?php while($like_query->have_posts()) : $like_query->the_post(); ?>
-                    
-                    <li class="like-list-item"><span class="col-2">
-                      <div class="img-container"><?php the_post_thumbnail('thumbnail'); ?></div>
+                    <li class="like-list-item">
+                      <div class="img-container">
+                        <?php the_post_thumbnail('thumbnail'); ?>
+                      </div>
                       <?php the_title(); ?>
-                    </span></li>
+                    </li>
                     <?php endwhile; ?>
                   </ul>
                 <?php endif; ?>

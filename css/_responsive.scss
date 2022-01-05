@@ -65,8 +65,8 @@
     .header {
       display: block;
       text-align: left;
-      width: 110px;
-      height: 300px;
+      width: fit-content;
+      height: fit-content;
       right: 0;
       background-color: white;
       padding: 10px;
@@ -136,66 +136,36 @@
   .service-list-item {
     width: 100%;
   }
+  
+  .page__img {
+    width: 100%;
+  }
 
+  .blog__title {
+    font-size: 30px;
+  }
+
+  .blog__content {
+    font-size: 14px;
+  }
+
+
+.like-list {
+  justify-content: center;
+}
+.like-list-item {
+  
+  .img-container {
+    width: 30px;
+    height: 30px;
+
+    img {
+      line-height: 30px;
+    }
+  }
+}
+.wpcf7-form-control-wrap {
+  width: 80%;
+}
 }
 
-//   #container {
-//     width: 95%;
-
-//     & #contents {
-//       & section {
-//         & .title {
-//           display: block;
-//           font-size: 70px;
-//           margin: 0 auto;
-//           text-align: center;
-//         }
-
-//         & .content {
-//           font-size: 20px;
-
-//           & ul li {
-//             & .col-1 {
-//               display: inline-block;
-//               width: 300px;
-//             }
-  
-//             & .col-2 {
-//               & .img-container {
-//                 width: 30px;
-//                 height: 30px;
-//                 & img {
-//                   line-height: 30px;
-//                 }
-//               }
-//             }
-//           }
-//         }
-
-//         &#about {
-//           & ul li .col-1 {
-//             width: 150px;
-//           }
-//         }
-//         &#estimate {
-//           & ul li .col-1 {
-//             width: 200px;
-//           }
-//         }
-
-//         &#skills {
-//           text-align: center;
-//           & .content ul li {
-//             display: block;
-//             padding:20px 0;
-//             text-align: center;
-//             & img {
-//               display: block;
-//               margin: 0 auto;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }

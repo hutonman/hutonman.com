@@ -6,7 +6,8 @@
       <?php while(have_posts()) : the_post(); ?>
       <a href="<?php the_permalink(); ?>" class="card-cmp">
         <figure class="card__img-wrapper">
-          <?php the_post_thumbnail('medium'); ?>
+          <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+          <!-- <?php the_post_thumbnail('medium'); ?> -->
         </figure>
         <div class="card__body">
           <h2 class="card__title"><?php the_title(); ?></h2>

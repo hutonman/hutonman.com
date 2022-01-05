@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
 <div class="page__img">
-  <?php the_post_thumbnail('large'); ?>
+  <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+  <!-- <?php the_post_thumbnail('large'); ?> -->
 </div>
 <?php while(have_posts()) : the_post();?>
 <div class="blog">
